@@ -1,0 +1,23 @@
+version = 0.1
+[default]
+[default.pipeline_bootstrap]
+[default.pipeline_bootstrap.parameters]
+pipeline_user = "arn:aws:iam::881630945677:user/aws-sam-cli-managed-rollsdev-pipeline-PipelineUser-VOJLBWVELKMG"
+
+[rollsdev]
+[rollsdev.pipeline_bootstrap]
+[rollsdev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::881630945677:role/aws-sam-cli-managed-rollsdev-PipelineExecutionRole-1CF0J2QPTNHXW"
+cloudformation_execution_role = "arn:aws:iam::881630945677:role/aws-sam-cli-managed-rolls-CloudFormationExecutionR-XDQXUBQR1IQ1"
+artifacts_bucket = "aws-sam-cli-managed-rollsdev-pipe-artifactsbucket-d2qi4af670ou"
+image_repository = ""
+region = "us-east-1"
+
+[rollsprd]
+[rollsprd.pipeline_bootstrap]
+[rollsprd.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::881630945677:role/aws-sam-cli-managed-rollsprd-PipelineExecutionRole-K1K39SCWT7XJ"
+cloudformation_execution_role = "arn:aws:iam::881630945677:role/aws-sam-cli-managed-rolls-CloudFormationExecutionR-OGL8ZDOBWDNU"
+artifacts_bucket = "aws-sam-cli-managed-rollsprd-pipe-artifactsbucket-luqletylg5ke"
+image_repository = ""
+region = "us-east-1"
