@@ -71,7 +71,7 @@ jobs:
 
   build-and-deploy-feature:
     # this stage is triggered only for feature branches (feature*),
-    # which will build the stack and deploy to a stack named with branch name.
+    # which will build the stack and deploy to a stack named with branch name..
     if: startsWith(github.ref, 'refs/heads/feature')
     needs: [test]
     runs-on: ubuntu-latest
