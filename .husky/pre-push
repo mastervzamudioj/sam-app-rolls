@@ -1,0 +1,18 @@
+#!/bin/sh
+
+baserepo=$(basename $(git remote get-url origin) .git)
+
+resp=$(curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/mastervzamudioj/$baserepo/pulls | jq -e 'any( .[] ; . != " " )')
+
+vacio='false'
+echo $resp
+if [ $resp = "false" ]
+then
+    exit 0 # push will  execute
+else
+    echo "you can not push any new pull request , as there is one still open"
+    exit 1 # push will not execute
+fi
+
